@@ -9,3 +9,4 @@ xarray==2023.6.0
 pmdarima==2.0.4
 statsmodels==0.14.0
 plotly==5.14.0
+streamlit-option-menu
