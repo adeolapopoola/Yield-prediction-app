@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import joblib
 import pickle
-import xgboost
 
 #timeseries_df = pd.read_csv(r"C:\Users\deola\Downloads\Dashboard_data (1).xls", parse_dates=['Year'])
 timeseries_df = pd.read_csv('Dashboard_data (1).xls', parse_dates=['Year'])
