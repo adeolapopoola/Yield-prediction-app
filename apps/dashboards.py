@@ -21,7 +21,8 @@ def app():
     if not filtered_df.empty:
         # Time Series Plot
         fig = px.line(filtered_df, x=filtered_df.index, y='Yield(t/ha)', 
-                      title=f'Time Series for {Crop_type} in {Country}', markers=True)
+                      title=f'Time Series for {Crop_type} in {Country}', markers=True,
+                      color_discrete_sequence=['#00695c'])
         fig.update_layout(xaxis_title='Year', yaxis_title='Yield(t/ha)')
                          #xaxis=dict(showgrid = False), yaxis= dict(showgrid = False))
         fig.update_layout(title_x=0.2)
@@ -30,7 +31,8 @@ def app():
         # Bar Chart: Annual Yield Comparison
         fig = px.bar(filtered_df, x=filtered_df.index.year, y='Yield(t/ha)', 
                      title=f'Annual Yield Comparison for {Crop_type} in {Country}', 
-                     labels={'x': 'Year', 'Yield(t/ha)': 'Yield(t/ha)'})
+                     labels={'x': 'Year', 'Yield(t/ha)': 'Yield(t/ha)'},
+                     color_discrete_sequence=['#00695c'])
         #fig.update_layout(xaxis=dict(showgrid=False), yaxis=dict(showgrid=False))
         fig.update_layout(title_x=0.15)
         st.plotly_chart(fig)
@@ -38,7 +40,8 @@ def app():
         # Scatter Plot: Yield vs Fertilizer Use
         fig = px.scatter(filtered_df, x='Nitrogen(t/ha)', y='Yield(t/ha)', 
                          title=f'Yield vs Fertilizer Use for {Crop_type} in {Country}', 
-                         labels={'Nitrogen(t/ha)': 'Fertilizer Use Nitrogen(t/ha)', 'Yield(t/ha)': 'Yield(t/ha)'})
+                         labels={'Nitrogen(t/ha)': 'Fertilizer Use Nitrogen(t/ha)', 'Yield(t/ha)': 'Yield(t/ha)'},
+                         color_discrete_sequence=['#00695c'])
         #fig.update_layout(xaxis=dict(showgrid=False), yaxis=dict(showgrid=False))
         fig.update_layout(title_x=0.2)
         st.plotly_chart(fig)
@@ -46,7 +49,8 @@ def app():
         # Scatter Chart: Yield vs Average Annual Temperature
         fig = px.scatter(filtered_df, x='AverageTemperature', y='Yield(t/ha)', 
                          title=f'Yield vs Average Annual Temperature for {Crop_type} in {Country}', 
-                         labels={'AverageTemperature': 'Average Temperature (°C)', 'Yield(t/ha)': 'Yield(t/ha)'})
+                         labels={'AverageTemperature': 'Average Temperature (°C)', 'Yield(t/ha)': 'Yield(t/ha)'},
+                         color_discrete_sequence=['#00695c'])
         fig.update_layout(title_x=0.1)
         st.plotly_chart(fig)
 
