@@ -7,7 +7,7 @@ timeseries_df = pd.read_csv(r"C:\Users\deola\Downloads\Dashboard_data (1).xls", 
 timeseries_df.set_index('Year', inplace=True)
 
 xgboost_model = pickle.load(open('boost.pkl', 'rb'))
-knr_model = joblib.load('knr.pkl')
+#knr_model = joblib.load('knr.pkl')
 nn_model = joblib.load('nn.pkl')
 preprocessor = joblib.load('preprocessor.pkl')
 
@@ -27,10 +27,10 @@ def predict_xgboost(features):
     predicted_value = xgboost_model.predict(transformed_features)
     return predicted_value
 
-def predict_knr(features):
-    transformed_features = preprocessor.transform(features)
-    predicted_value = knr_model.predict(transformed_features)
-    return predicted_value
+#def predict_knr(features):
+    #transformed_features = preprocessor.transform(features)
+    #predicted_value = knr_model.predict(transformed_features)
+    #return predicted_value
 
 def predict_nn(features):
     transformed_features = preprocessor.transform(features)
@@ -39,7 +39,7 @@ def predict_nn(features):
 
 def app():
     st.subheader('Predictions with Machine Learning Models')
-    model = st.selectbox('Select Model', ['Neural Networks', 'XGBoost', 'K-Nearest Neighbors'])
+    model = st.selectbox('Select Model', ['Neural Networks', 'XGBoost'])#'K-Nearest Neighbors'
     Country = st.selectbox('Select Country', timeseries_df['Country'].unique())
     Crop_type = st.selectbox('Select Crop Type', timeseries_df['Crop_type'].unique())
     quartiles = calculate_country_quartiles(timeseries_df, Country)
@@ -82,9 +82,9 @@ def app():
             predicted_yield_xgb = predict_xgboost(features)
             st.write(f"Predicted yield for {Crop_type} in {Country} for {Year}: {predicted_yield_xgb[0]:.4f}(t/ha)")
         
-        elif model == 'K-Nearest Neighbors':
-            predicted_yield_knr = predict_knr(features)
-            st.write(f"Yield prediction for {Crop_type} in {Country} for {Year}: {predicted_yield_knr[0]:.4f}(t/ha)")
+        #elif model == 'K-Nearest Neighbors':
+            #predicted_yield_knr = predict_knr(features)
+            #st.write(f"Yield prediction for {Crop_type} in {Country} for {Year}: {predicted_yield_knr[0]:.4f}(t/ha)")
             
         elif model == 'Neural Networks':
             predicted_yield_nn = predict_nn(features)
