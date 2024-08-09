@@ -5,7 +5,7 @@ def app():
         """
         <style>
         [data-testid = 'stAppViewContainer']{
-        background-image:url('https://img.freepik.com/premium-photo/hand-robotic-holding-plant-dirt-generative-ai-planting-trees-reforestation_687553-6976.jpg?w=1800');
+        background-image:url('https://github.com/adeolapopoola/Yield-prediction-app/blob/main/Agri-LL_Square.jpg?raw=true');
         background-size: 95%;
         background-position: center;
         background-repeat: no-repeat;
