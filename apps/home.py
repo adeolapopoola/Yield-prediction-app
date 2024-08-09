@@ -21,7 +21,7 @@ def app():
         }
 
         [data-testid = 'stSidebarContent']{
-        background-image:url('https://github.com/adeolapopoola/Yield-prediction-app/blob/main/Agri-LL_Square.jpg?raw=true');
+        background-color: #00695c;
         }
 
         .header {
