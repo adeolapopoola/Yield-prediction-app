@@ -6,16 +6,7 @@ import plotly.graph_objects as go
 import zipfile
 import os
 
-
-zip_file_path = 'Data/Dashboard_data (1).zip'
-csv_file_name = 'Dashboard_data (1).xls'
-
-# Unzip the file
-with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
-    zip_ref.extractall('Data')
-
 # Read the CSV file
-csv_file_path = os.path.join('Data', csv_file_name)
 timeseries_df = pd.read_csv(r"C:\Users\deola\Downloads\Dashboard_data (1).xls", parse_dates=['Year'])
 timeseries_df.set_index('Year', inplace=True)
 
