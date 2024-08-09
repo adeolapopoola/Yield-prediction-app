@@ -11,4 +11,4 @@ statsmodels==0.14.0
 plotly==5.14.0
 streamlit-option-menu
 matplotlib
-xgboost==1.26.4
+xgboost
