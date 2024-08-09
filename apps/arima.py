@@ -16,7 +16,7 @@ def predict_arima(Year, Country, Crop_type, forecast_years):
     arima_fit = arima.fit()
     
     start = len((filtered_df2))
-    end = start + forecast_years - 1 
+    end = start + forecast_years-1 
     prediction = arima_fit.predict(start=start, end=end)
     last_date = filtered_df2.index[-1]
     predicted_series = pd.Series(list(prediction), 
@@ -41,16 +41,15 @@ def app():
         (timeseries_df['Country'] == Country) & (timeseries_df['Crop_type'] == Crop_type)]
         
         st.write(f"ARIMA Forecast for {Crop_type} in {Country} for the next {forecast_years} years:")
-
         
         fig = go.Figure()
         fig.add_trace(go.Scatter(x=filtered_df2.index, y=filtered_df2['Yield(t/ha)'],
-                                     mode='lines+markers', name='Observed'))
+                                     mode='lines+markers', name='Observed', line = dict(color = '#00695c')))
         fig.add_trace(go.Scatter(x=forecast.index, y=forecast,
                                      mode='lines+markers', name='Forecast', line=dict(color='red')))
         fig.update_layout(title=f'ARIMA Forecast for {Crop_type} in {Country}',
                               xaxis_title='Year', yaxis_title='Yield(t/ha)', title_x=0.2)
-                              #xaxis=dict(showgrid=False), yaxis=dict(showgrid=False))
+                              #xaxis=dict(showgrid=True), yaxis=dict(showgrid=True))
         st.plotly_chart(fig)
 
 
