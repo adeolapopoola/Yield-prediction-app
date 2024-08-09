@@ -11,11 +11,11 @@ st.markdown(
         <style>
 
         .stApp {
-            background-color: #004d40;
+            background-color: #00695c;
         }
 
         [data-testid="stHeader"] {
-            background-color: #00695c;
+            background-color: #004d40;
         }
         [data-testid="stHeader"] h1 {
             font-weight: bold;
@@ -23,7 +23,7 @@ st.markdown(
         }
 
         [data-testid="stSidebar"] {
-            background-color: #004d40;
+            background-color: #00695c;
         }
         [data-testid="stSidebarContent"] {
             background-color: #004d40;
