@@ -5,7 +5,7 @@ def app():
         """
         <style>
         [data-testid = 'stAppViewContainer']{
-        background-image:url('https://sa.catapult.org.uk/wp-content/uploads/2023/03/Agri-LL_Square.jpg');
+        background-image:url('Agri-LL_Square.jpg');
         background-size: 95%;
         background-position: center;
         background-repeat: no-repeat;
@@ -21,7 +21,7 @@ def app():
         }
 
         [data-testid = 'stSidebarContent']{
-        background-image:url('https://sa.catapult.org.uk/wp-content/uploads/2023/03/Agri-LL_Square.jpg');
+        background-image:url('Agri-LL_Square.jpg');
         }
 
         .header {
