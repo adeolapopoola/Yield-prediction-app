@@ -5,7 +5,7 @@ def app():
         """
         <style>
         [data-testid = 'stAppViewContainer']{
-        background-image:'Agri-LL_Square.jpg';
+        background-image:url('Agri-LL_Square.jpg');
         background-size: 95%;
         background-position: center;
         background-repeat: no-repeat;
