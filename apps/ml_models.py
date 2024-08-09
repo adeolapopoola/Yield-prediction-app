@@ -3,7 +3,8 @@ import pandas as pd
 import joblib
 import pickle
 
-timeseries_df = pd.read_csv(r"C:\Users\deola\Downloads\Dashboard_data (1).xls", parse_dates=['Year'])
+#timeseries_df = pd.read_csv(r"C:\Users\deola\Downloads\Dashboard_data (1).xls", parse_dates=['Year'])
+timeseries_df = pd.read_csv('Dashboard_data (1).xls', parse_dates=['Year'])
 timeseries_df.set_index('Year', inplace=True)
 
 xgboost_model = pickle.load(open('boost.pkl', 'rb'))
