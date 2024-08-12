@@ -11,8 +11,9 @@ timeseries_df = pd.read_csv("Dashboard_data (1).xls", parse_dates=['Year'])
 timeseries_df.set_index('Year', inplace=True)
 
 xgboost_model = pickle.load(open('boost.pkl', 'rb'))
+nn_model = pickle.load(open('nn.pkl', 'rb'))
 #knr_model = joblib.load('knr.pkl')
-nn_model = joblib.load('nn.pkl')
+#nn_model = joblib.load('nn.pkl')
 preprocessor = joblib.load('preprocessor.pkl')
 
 #Function to calculate country-specific quartiles
