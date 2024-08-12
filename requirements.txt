@@ -12,4 +12,4 @@ plotly==5.14.0
 streamlit-option-menu
 matplotlib
 xgboost
-scikeras
+
