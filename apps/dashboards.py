@@ -14,7 +14,9 @@ timeseries_df.set_index('Year', inplace=True)
 def app():
     st.subheader('Dashboards')
     Country = st.selectbox('Select Country', timeseries_df['Country'].unique())
-    Crop_type = st.selectbox('Select Crop Type', timeseries_df['Crop_type'].unique())
+    available_crops = timeseries_df[timeseries_df['Country'] == Country]['Crop_type'].unique()
+    Crop_type = st.selectbox('Select Crop Type', available_crops)
+    #Crop_type = st.selectbox('Select Crop Type', timeseries_df['Crop_type'].unique())
 
     filtered_df = timeseries_df[(timeseries_df['Country'] == Country) & (timeseries_df['Crop_type'] == Crop_type)]
 
