@@ -31,7 +31,9 @@ def predict_arima(Year, Country, Crop_type, forecast_years):
 def app():
     st.subheader('Predictions with ARIMA Model')
     Country = st.selectbox('Select Country', timeseries_df['Country'].unique())
-    Crop_type = st.selectbox('Select Crop Type', timeseries_df['Crop_type'].unique())
+    available_crops = timeseries_df[timeseries_df['Country'] == Country]['Crop_type'].unique()
+    Crop_type = st.selectbox('Select Crop Type', available_crops)
+    #Crop_type = st.selectbox('Select Crop Type', timeseries_df['Crop_type'].unique())
     forecast_years = st.slider('Select Years Ahead for Forecast', 1, 10, 1)
 
     if st.button('Predict'):
