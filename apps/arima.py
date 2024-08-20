@@ -5,8 +5,7 @@ from statsmodels.tsa.arima.model import ARIMA
 import plotly.express as px
 import plotly.graph_objects as go
 
-#timeseries_df = pd.read_csv(r"C:\Users\deola\Downloads\Dashboard_data (1).xls", parse_dates=['Year'])
-timeseries_df = pd.read_csv('Dashboard_data (1).xls', parse_dates=['Year'])
+timeseries_df = pd.read_csv(r"C:\Users\deola\Downloads\Dashboard_data (1).xls", parse_dates=['Year'])
 timeseries_df.set_index('Year', inplace=True)
 
 def predict_arima(Year, Country, Crop_type, forecast_years):
