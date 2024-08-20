@@ -46,7 +46,9 @@ def app():
     st.subheader('Predictions with Machine Learning Models')
     model = st.selectbox('Select Model', ['Neural Networks','XGBoost']) #'K-Nearest Neighbors'
     Country = st.selectbox('Select Country', timeseries_df['Country'].unique())
-    Crop_type = st.selectbox('Select Crop Type', timeseries_df['Crop_type'].unique())
+    available_crops = timeseries_df[timeseries_df['Country'] == Country]['Crop_type'].unique()
+    Crop_type = st.selectbox('Select Crop Type', available_crops)
+    #Crop_type = st.selectbox('Select Crop Type', timeseries_df['Crop_type'].unique())
     quartiles = calculate_country_quartiles(timeseries_df, Country)
     
     # Get ranges for the selected country
