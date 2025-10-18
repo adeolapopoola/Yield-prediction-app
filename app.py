@@ -2,7 +2,7 @@ import streamlit as st
 from multiapp import MultiApp
 #from apps import home, dashboards, arima, ml_models, about
 apps/
- ├── __init__.py     
+ __init__.py     
  ├── home.py
  ├── dashboards.py
  ├── arima.py
