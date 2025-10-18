@@ -3,11 +3,11 @@ from multiapp import MultiApp
 #from apps import home, dashboards, arima, ml_models, about
 apps/
  __init__.py     
- ├── home.py
- ├── dashboards.py
- ├── arima.py
- ├── ml_models.py
- └── about.py
+    home.py
+    dashboards.py
+    arima.py
+    ml_models.py
+    about.py
 
 
 app = MultiApp()
