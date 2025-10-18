@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from statsmodels.tsa.arima.model import ARIMA
 import plotly.express as px
 import plotly.graph_objects as go
-from apps.arima import predict_arima
+#from apps.arima import predict_arima
 
 
 #timeseries_df = pd.read_csv(r"C:\Users\deola\Downloads\Dashboard_data (1).xls", parse_dates=['Year'])
